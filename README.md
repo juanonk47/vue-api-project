@@ -1,5 +1,9 @@
 # vue-api-project
-
+# Frameworks
+  - Devextreme
+  - Devextreme-cli
+# API LIST
+  -
 ## Project setup
 ```
 npm install
