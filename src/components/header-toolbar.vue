@@ -26,11 +26,11 @@
         <!-- eslint-enable -->
       </dx-item>
 
-      <dx-item
+      <!-- <dx-item
         location="after"
         locate-in-menu="auto"
         menu-item-template="menuUserItem"
-      >
+      > -->
         <!-- eslint-disable vue/no-unused-vars -->
         <div slot-scope="_">
         <!-- eslint-enable -->
@@ -40,17 +40,17 @@
             height="100%"
             styling-mode="text"
           >
-            <user-panel :menu-items="userMenuItems" menu-mode="context" />
+            <!-- <user-panel :menu-items="userMenuItems" menu-mode="context" /> -->
           </dx-button>
         </div>
-      </dx-item>
+      <!-- </dx-item> -->
       <!-- eslint-disable vue/no-unused-vars -->
-      <user-panel
+      <!-- <user-panel
         :menu-items="userMenuItems"
         menu-mode="list"
         slot-scope="_"
         slot="menuUserItem"
-      />
+      /> -->
       <!-- eslint-enable -->
     </dx-toolbar>
   </header>
@@ -61,7 +61,7 @@ import DxButton from "devextreme-vue/button";
 import DxToolbar, { DxItem } from "devextreme-vue/toolbar";
 import auth from "../auth";
 
-import UserPanel from "./user-panel";
+// import UserPanel from "./user-panel";
 
 export default {
   props: {
@@ -98,7 +98,7 @@ export default {
     DxButton,
     DxToolbar,
     DxItem,
-    UserPanel
+    // UserPanel
   }
 };
 </script>

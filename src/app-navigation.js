@@ -5,17 +5,17 @@ export default [
     icon: "home"
   },
   {
-    text: "Examples",
+    text: "Projects",
     icon: "folder",
     items: [
       {
-        text: "Profile",
-        path: "/profile"
+        text: "OMDb API",
+        path: "/omdb-api"
       },
       {
         text: "Display Data",
         path: "/display-data"
       }
     ]
-  }
-  ];
+  
+  }];

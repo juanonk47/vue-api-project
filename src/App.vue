@@ -21,6 +21,7 @@
 <script>
 import TheFooter from "./components/the-footer";
 import { sizes, subscribe, unsubscribe } from "./utils/media-query";
+// import axios from "axios";
 
 function getScreenSizeInfo() {
   const screenSizes = sizes();
@@ -28,7 +29,7 @@ function getScreenSizeInfo() {
   return {
     isXSmall: screenSizes["screen-x-small"],
     isLarge: screenSizes["screen-large"],
-    cssClasses: Object.keys(screenSizes).filter(cl => screenSizes[cl])
+    cssClasses: Object.keys(screenSizes).filter((cl) => screenSizes[cl]),
   };
 }
 
@@ -37,18 +38,18 @@ export default {
   data() {
     return {
       title: this.$appInfo.title,
-      screen: getScreenSizeInfo()
+      screen: getScreenSizeInfo(),
     };
   },
   computed: {
     cssClasses() {
       return ["app"].concat(this.screen.cssClasses);
-    }
+    },
   },
   methods: {
     screenSizeChanged() {
       this.screen = getScreenSizeInfo();
-    }
+    },
   },
 
   mounted() {
@@ -60,8 +61,8 @@ export default {
   },
 
   components: {
-    TheFooter
-  }
+    TheFooter,
+  },
 };
 </script>
 

@@ -1,3 +1,4 @@
+import OmdbApi from './views/omdb-api';
 import Vue from "vue";
 import Router from "vue-router";
 
@@ -65,7 +66,15 @@ const router = new Router({
       redirect: "/home"
     }
     
-  ]
+  , {
+      path: "/omdb-api",
+      name: "omdb-api",
+      meta: { requiresAuth: true },
+      components: {
+        layout: defaultLayout,
+        content: OmdbApi
+      }
+    }]
 });
 
 router.beforeEach((to, from, next) => {

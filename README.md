@@ -2,6 +2,8 @@
 # Frameworks
   - Devextreme
   - Devextreme-cli
+# Library
+  - Axios
 # API LIST
   -
 ## Project setup

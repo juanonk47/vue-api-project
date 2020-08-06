@@ -6,9 +6,15 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 import appInfo from "./app-info";
+// import axios from "axios";
 
 Vue.config.productionTip = false;
 Vue.prototype.$appInfo = appInfo;
+
+// LIBREARIAS USADAS
+
+//LIBRERIA PARA CONSUMIAR API REST
+// Vue.use(axios)
 
 new Vue({
   router,
