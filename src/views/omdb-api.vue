@@ -2,12 +2,20 @@
   <div>
     <div class="content-block">
       <div class="dx-card responsive-paddings">
-        <DxTextBox v-model="text" :max-length="40" value-change-event="keyup">
+        <DxTextBox
+          v-if="loading"
+          v-model="text"
+          :max-length="40"
+          placeholder="Busca por nombre la pelicula...."
+          value-change-event="keyup"
+        >
           <DxTextBoxButton
             :options="serachButton"
             name="search"
             location="after"
         /></DxTextBox>
+        <!-- <ring-loader :loading="loading" :size="size"></ring-loader> -->
+        <br />
         <div v-if="movie.Poster" class="container">
           <DxBox :height="600" direction="row" width="100%">
             <DxItem :ratio="0.9">
@@ -51,11 +59,14 @@ import Axios from "axios";
 import { DxButton as DxTextBoxButton } from "devextreme-vue/text-box";
 import appinfo from "../app-info";
 import { DxBox, DxItem } from "devextreme-vue/box";
+import RingLoader from "vue-spinner/src/RingLoader.vue";
 
 export default {
-  components: { DxTextBox, DxTextBoxButton, DxBox, DxItem },
+  components: { DxTextBox, DxTextBoxButton, DxBox, DxItem, RingLoader },
   data() {
     return {
+      loading: true,
+      size: "100",
       text: "",
       movie: {},
       serachButton: {
@@ -69,10 +80,12 @@ export default {
   },
   methods: {
     getMovie() {
+      this.loading = true;
       Axios.get(
         `https://www.omdbapi.com/?apikey=${appinfo.API_KEY_OMDB}&t=${this.text}`
       ).then((response) => {
         this.movie = response.data;
+        this.loading = true;
       });
     },
   },
